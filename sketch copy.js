@@ -26,15 +26,13 @@ class LeftScreen {
     let blY = 300;
     let brX = 300;
     let brY = 600;
-    let op = 15;
-    let op1 = 15;
     rectMode(CORNERS);
     //(i < height/2) && ( lX < 250) && (lY < 250); assures that the loop does not continue to color or draw squares the adjacent half of the screen
     //without it the loop continues and the color of the adjacent square turns black
     //controls the top left quadrant
     for(let i = 0; (i < height/2) && ( lX < 250) && (lY < 250); i += 10){
       noStroke();
-      fill(140,83,50, op + i);//green
+      fill(108,179-i,108);//green
       rect(lX,lY,rX,rY);
       lX = lX + i;
       lY = lY + i;
@@ -42,7 +40,7 @@ class LeftScreen {
       //without it the loop continues and the color of the adjacent square turns black
       //controls bottom left quadrant
       for(let j = 0; (j <= height/2)&&(blX <= 300)&&(brY >= 300); j = j +10){
-        fill(0,0,0, op1+j);//green
+        fill(108,179-j,108);//green
         noStroke();
         rect(blX,blY,brX,brY);
         brY = brY - j;
@@ -64,17 +62,13 @@ class RightScreen{
     let blY = 0;
     let brX = 600;
     let brY = 300;
-    let a = .2;
-    let op = 15;
-    let op1 = 15;
     rectMode(CORNERS);
     //(i < height/2) && (rX >= 250) && (rY >= 250); assures that the loop does not continue to color or draw squares the adjacent half of the screen
     //without it the loop continues and the color of the adjacent square turns black
     //controls the bottom right quadrant
     for(let i = 0; (i < height/2) && (rX >= 250) && (rY >= 250); i = i + 10){
-      
       noStroke();
-      fill(83,175,151,op+i);//green
+      fill(108,179-i,108);//green
       rect(lX,lY, rX,rY);
       rX = rX - i;
       rY = rY - i;
@@ -82,13 +76,11 @@ class RightScreen{
       //without it the loop continues and the color of the adjacent square turns black
       //controls the top right quadrant
       for(let j = 0; (j < height/2) && (brX >= 250) && (blY <= 250); j = j + 10){
-       
-        fill(83,175,151, op1+j);//green
+        fill(108,179-j,108);//green
         noStroke();
         rect(blX,blY, brX,brY);
         brX = brX - j;
         blY = blY + j;
-        
       }
     }
   }
