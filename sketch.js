@@ -3,7 +3,7 @@ let righthalfQuadrant;
 
 function setup() {
   createCanvas(552, 552);
-
+  
   lefthalfQuadrant = new LeftScreen();
   righthalfQuadrant = new RightScreen();
 }
@@ -13,6 +13,8 @@ function draw() {
 
   lefthalfQuadrant.display();
   righthalfQuadrant.display();
+  save('opArt.png');
+  noLoop(); // we just want to export once
 }
 
 class LeftScreen {
